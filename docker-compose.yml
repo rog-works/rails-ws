@@ -2,9 +2,26 @@ version: '3'
 services:
   app:
     container_name: rails-app
-    build: .
+    build: ./app
     image: rails-app:latest
     ports:
       - 8080:3000
     volumes:
-      - .:/var/www
+      - ./app:/var/www/app
+    links:
+      - db:db
+
+  db:
+    container_name: rails-db
+    build: ./docker/db
+    image: rails-db:latest
+    ports:
+      - 3306:3306
+    volumes:
+      - app-db:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
+volumes:
+  app-db:
+    driver: local
