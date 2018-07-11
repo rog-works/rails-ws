@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    container_name: rails-app
+    build: .
+    image: rails-app:latest
+    ports:
+      - 8080:3000
+    volumes:
+      - .:/var/www
