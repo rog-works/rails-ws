@@ -20,4 +20,4 @@ RUN apk add --update --no-cache \
  # && apk del build-dependencies \
  && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-CMD tail -f /dev/null
+CMD rails s
