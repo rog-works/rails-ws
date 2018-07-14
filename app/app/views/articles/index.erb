@@ -1,1 +1,7 @@
-<%= @articles[0]['id'] %>: <%= @articles[0]['name'] %>
+<% @symbols.each do |row| %>
+	<%= row[:id] %>: <%= row[:name] %><br>
+<% end %>
+
+<% @hash.each do |row| %>
+	<%= row['id'] %>: <%= row['name'] %><br>
+<% end %>

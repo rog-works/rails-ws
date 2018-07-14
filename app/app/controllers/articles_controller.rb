@@ -1,7 +1,10 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = [
+    @symbols = [
       {id: 1, name: 'hoge'}
+    ]
+    @hash = [
+      {'id' => 101, 'name' => 'fuga'}
     ]
   end
 end
