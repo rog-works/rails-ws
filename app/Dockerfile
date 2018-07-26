@@ -20,4 +20,8 @@ RUN apk add --update --no-cache \
  # && apk del build-dependencies \
  && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
-CMD rails s
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]

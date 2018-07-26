@@ -1,7 +1,6 @@
-<% @symbols.each do |row| %>
-	<%= row[:id] %>: <%= row[:name] %><br>
-<% end %>
-
-<% @hash.each do |row| %>
-	<%= row['id'] %>: <%= row['name'] %><br>
-<% end %>
+<div>
+	<% @symbols.each do |row| %>
+		<div><a href="<%= article_path(row[:id]) %>"><%= row[:name] %></a></div>
+	<% end %>
+</div>
+<div><a href="<%= articles_path %>/new">new</a></div>
